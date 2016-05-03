@@ -92,6 +92,7 @@ describe('util.js', function () {
           n6 = util.badNames('fucktard');
           n7 = util.badNames('shithead');
           n8 = util.badNames('');
+          n9 = util.badNames('mother fucker');
 
       expect(n1).to.be.true;
       expect(n2).to.be.true;
@@ -101,6 +102,7 @@ describe('util.js', function () {
       expect(n6).to.be.true;
       expect(n7).to.be.true;
       expect(n8).to.be.false;
+      expect(n9).to.be.true;
     });
 
    
