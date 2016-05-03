@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/huytd/agar.io-clone.git"
+    "url": "https://github.com/chazzerguy/agar.io-clone.git"
   },
   "author": "Huy Tran",
   "license": "MIT",
@@ -30,7 +30,9 @@
     "Damian Dlugosz <bigfootdd@gmail.com> (https://github.com/bigfoot90)",
     "Juha Tauriainen <juha@bin.fi> (https://github.com/JuhQ)",
     "Madara Uchiha <me@madara.ninja> (https://github.com/MadaraUchiha)",
-    "Keith Groves <Keithalgroves@gmail.com> (https://github.com/buskcoin)"
+    "Keith Groves <Keithalgroves@gmail.com> (https://github.com/buskcoin)",
+    "Chaz Hinkle <chazzerguy@gmail.com> (https://github.com/chazzerguy)",
+    "Ben Hinkle <thebenhink@gmail.com> (https://github.com/benhink)"
   ],
   "dependencies": {
     "babel": "^5.6.14",
