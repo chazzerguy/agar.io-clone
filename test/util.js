@@ -3,6 +3,8 @@
 var expect = require('chai').expect,
     util   = require('../src/server/lib/util');
 
+var cfg = require('../config.json');
+
 
 /**
  * Tests for server/lib/util.js
@@ -66,7 +68,20 @@ describe('util.js', function () {
     });
   });
 
-  describe('#badWords', function () {
+  describe('#validPass', function() {
+
+    it('should match entered password to what is in config.json', function () {
+      var t1 = util.validPass(cfg.playerPass);
+      var t2 = util.validPass('');
+      var t3 = util.validPass('password');
+
+      expect(t1).to.be.true;
+      expect(t2).to.be.false;
+      expect(t3).to.be.false;
+    });
+  });
+
+  describe('#badWords', function() {
 
     it('should disallow bad words', function () {
       var n1 = util.badNames('fuck'),
@@ -76,6 +91,7 @@ describe('util.js', function () {
           n5 = util.badNames('gary');
           n6 = util.badNames('fucktard');
           n7 = util.badNames('shithead');
+          n8 = util.badNames('');
 
       expect(n1).to.be.true;
       expect(n2).to.be.true;
@@ -84,6 +100,7 @@ describe('util.js', function () {
       expect(n5).to.be.false;
       expect(n6).to.be.true;
       expect(n7).to.be.true;
+      expect(n8).to.be.false;
     });
 
    
