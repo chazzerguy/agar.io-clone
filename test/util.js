@@ -94,15 +94,27 @@ describe('util.js', function () {
           n8 = util.badNames('');
           n9 = util.badNames('mother fucker');
 
-      expect(n1).to.be.true;
-      expect(n2).to.be.true;
-      expect(n3).to.be.true;
-      expect(n4).to.be.true;
-      expect(n5).to.be.false;
-      expect(n6).to.be.true;
-      expect(n7).to.be.true;
-      expect(n8).to.be.false;
-      expect(n9).to.be.true;
+          if (cfg.badWordFilter) {
+            expect(n1).to.be.true;
+            expect(n2).to.be.true;
+            expect(n3).to.be.true;
+            expect(n4).to.be.true;
+            expect(n5).to.be.false;
+            expect(n6).to.be.true;
+            expect(n7).to.be.true;
+            expect(n8).to.be.false;
+            expect(n9).to.be.true;
+          } else {    
+            expect(n1).to.be.false;
+            expect(n2).to.be.false;
+            expect(n3).to.be.false;
+            expect(n4).to.be.false;
+            expect(n5).to.be.false;
+            expect(n6).to.be.false;
+            expect(n7).to.be.false;
+            expect(n8).to.be.false;
+            expect(n9).to.be.false;
+    }
     });
 
    

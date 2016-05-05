@@ -20,6 +20,10 @@ exports.validPass = function(password) {
 };
 
 exports.badNames = function(nickname) {
+    if (!cfg.badWordFilter) {
+        return false;
+    }
+    
     for (var i = 0; i < badwords.blocked.length; i++) {
         var toTest = badwords.blocked[i].toUpperCase();
         var regex = new RegExp(toTest);    
