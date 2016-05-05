@@ -251,8 +251,7 @@ ChatClient.prototype.appendMessage = function (node) {
 // Sends a message or executes a command on the click of enter.
 ChatClient.prototype.sendChat = function (key) {
     var commands = this.commands,
-        input = document.getElementById('chatInput');
-
+    input = document.getElementById('chatInput');
     key = key.which || key.keyCode;
 
     if (key === KEY_ENTER) {

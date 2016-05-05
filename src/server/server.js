@@ -14,7 +14,7 @@ var c = require('../../config.json');
 var util = require('./lib/util');
 
 // Import quadtree.
-var quadtree= require('../../quadtree');
+var quadtree = require('../../quadtree');
 
 var args = {x : 0, y : 0, h : c.gameHeight, w : c.gameWidth, maxChildren : 1, maxDepth : 5};
 console.log(args);
@@ -334,10 +334,17 @@ io.on('connection', function (socket) {
     socket.on('playerChat', function(data) {
         var _sender = data.sender.replace(/(<([^>]+)>)/ig, '');
         var _message = data.message.replace(/(<([^>]+)>)/ig, '');
+
         if (c.logChat === 1) {
             console.log('[CHAT] [' + (new Date()).getHours() + ':' + (new Date()).getMinutes() + '] ' + _sender + ': ' + _message);
         }
-        socket.broadcast.emit('serverSendPlayerChat', {sender: _sender, message: _message.substring(0,35)});
+
+        if (!util.badNames(_message)) {
+            socket.broadcast.emit('serverSendPlayerChat', {sender: _sender, message: _message.substring(0,35)});
+        } else {
+            socket.emit('kick', 'Bad language.');
+            socket.disconnect();
+        }
     });
 
     socket.on('pass', function(data) {
