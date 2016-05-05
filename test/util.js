@@ -83,7 +83,7 @@ describe('util.js', function () {
 
   describe('#badWords', function() {
 
-    it('should disallow bad words', function () {
+    it('should disallow bad words if the filter is on (currently set to ' + cfg.badWordFilter + ')', function () {
       var n1 = util.badNames('fuck'),
           n2 = util.badNames('shit'),
           n3 = util.badNames('Fuck'),
