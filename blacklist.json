@@ -1,6 +1,8 @@
 {
     "blocked":  
     [
+    	"@",
+    	"!",
     	"3",
     	"ass",
     	"asshole",
@@ -11,7 +13,7 @@
 	    "chinaman",
 	    "chinamen",
 	    "chink",
-	    "clap,"
+	    "clap",
 	    "cock",
 	    "crip",
 	    "cunt",
@@ -52,7 +54,7 @@
 	    "retard",
 	    "shit",
 	    "shemale",
-	    "siftar"
+	    "siftar",
 	    "skank",
 	    "slut",
 	    "spade",
@@ -92,4 +94,5 @@
         "hore",
         "guadalupe"
 	]
+
 }
