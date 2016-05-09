@@ -23,6 +23,8 @@ exports.badNames = function(nickname) {
     if (!cfg.badWordFilter) {
         return false;
     }
+
+    nickname = nickname.replace(/ /g, "");
     
     for (var i = 0; i < badwords.blocked.length; i++) {
         var toTest = badwords.blocked[i].toUpperCase();
