@@ -178,16 +178,25 @@ function outOfBounds() {
 }
 
 var visibleBorderSetting = document.getElementById('visBord');
+if (visibleBorderSetting) {
+    borderDraw = true;
+}
 visibleBorderSetting.onchange = toggleBorder;
 
 var showMassSetting = document.getElementById('showMass');
+if (showMassSetting) {
+    toggleMassState = 1;
+}
 showMassSetting.onchange = toggleMass;
 
 var continuitySetting = document.getElementById('continuity');
+if (continuitySetting) {
+    continuity = true;
+}
 continuitySetting.onchange = toggleContinuity;
 
-var continuitySetting = document.getElementById('roundFood');
-continuitySetting.onchange = toggleRoundFood;
+var roundFoodSetting = document.getElementById('roundFood');
+roundFoodSetting.onchange = toggleRoundFood;
 
 var graph = c.getContext('2d');
 
