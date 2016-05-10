@@ -32,7 +32,8 @@
     "Madara Uchiha <me@madara.ninja> (https://github.com/MadaraUchiha)",
     "Keith Groves <Keithalgroves@gmail.com> (https://github.com/buskcoin)",
     "Chaz Hinkle <chazzerguy@gmail.com> (https://github.com/chazzerguy)",
-    "Ben Hinkle <thebenhink@gmail.com> (https://github.com/benhink)"
+    "Ben Hinkle <thebenhink@gmail.com> (https://github.com/benhink)",
+    "wb9688 <wbertrums@gmail.com> (https://github.com/wb9688)"
   ],
   "dependencies": {
     "babel": "^5.6.14",
@@ -52,9 +53,13 @@
     "node-libs-browser": "^0.5.2",
     "nodemon": "^1.2.1",
     "sat": "^0.5.0",
+    "simple-quadtree": "^0.1.3",
     "socket.io": "^1.3.5",
     "socket.io-client": "^1.3.5",
     "webpack": "^1.10.1",
     "webpack-stream": "^2.0.0"
+  },
+  "devDependencies": {
+    "sync-request": "^3.0.0"
   }
 }
