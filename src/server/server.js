@@ -14,9 +14,12 @@ var c = require('../../config.json');
 var util = require('./lib/util');
 
 // Import quadtree.
-var quadtree = require('simple-quadtree');
+var quadtree= require('../../quadtree');
 
-var tree = quadtree(0, 0, c.gameWidth, c.gameHeight);
+var args = {x : 0, y : 0, h : c.gameHeight, w : c.gameWidth, maxChildren : 1, maxDepth : 5};
+console.log(args);
+
+var tree = quadtree.QUAD.init(args);
 
 var users = [];
 var massFood = [];
@@ -514,7 +517,6 @@ function tickPlayer(currentPlayer) {
                 }
             }
         }
-        return true;
     }
 
     function collisionCheck(collision) {
@@ -582,10 +584,10 @@ function tickPlayer(currentPlayer) {
         playerCircle.r = currentCell.radius;
 
         tree.clear();
-        users.forEach(tree.put);
+        tree.insert(users);
         var playerCollisions = [];
 
-        var otherUsers =  tree.get(currentPlayer, check);
+        var otherUsers =  tree.retrieve(currentPlayer, check);
 
         playerCollisions.forEach(collisionCheck);
     }
